@@ -19,10 +19,8 @@ public class GeoServiceImplTest {
     @Test
     public void testByIpWithLocalhostIp() {
         String ip = GeoServiceImpl.LOCALHOST;
-        GeoService geoServiceMock = mock(GeoService.class);
-        when(geoServiceMock.byIp(ip)).thenReturn(new Location(null, null, null, 0));
 
-        Location result = geoServiceMock.byIp(ip);
+        Location result = geoService.byIp(ip);
         assertEquals(new Location(null, null, null, 0), result);
     }
 
